@@ -101,6 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/goocanvas-1.0/goocanvasutils.h
 %{_includedir}/goocanvas-1.0/goocanvaswidget.h
 %{_libdir}/libgoocanvas.la
+%{_libdir}/libgoocanvas.so
 %{_pkgconfigdir}/goocanvas.pc
 
 %files static
