@@ -14,6 +14,7 @@ BuildRequires:	cairo-devel
 BuildRequires:	glib2-devel >= 1:2.10.0
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.8
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 Requires:	glib2 >= 1:2.10.0
 Requires:	gtk+2 >= 2:2.10.0
@@ -74,8 +75,10 @@ Dokumentacja API goocanvas.
 %setup -q
 
 %build
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	--enable-gtk-doc \
