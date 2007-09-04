@@ -2,7 +2,7 @@ Summary:	Cairo/GTK+ Canvas
 Summary(pl.UTF-8):	Płótno Cairo/GTK+
 Name:		goocanvas
 Version:	0.9
-Release:	1
+Release:	2
 License:	LGPL v2
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/goocanvas/%{name}-%{version}.tar.gz
