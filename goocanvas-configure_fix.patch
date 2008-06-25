@@ -1,0 +1,18 @@
+--- configure.in.orig	2008-04-27 13:35:48.000000000 +0200
++++ configure.in	2008-06-25 09:01:37.000000000 +0200
+@@ -10,11 +10,11 @@
+ # If the code has changed at all: REVISION++.
+ # If any interfaces have changed at all: CURRENT++, REVISION=0.
+ # If it is backwards compatible: AGE++, else AGE=0.
+-LT_CURRENT=4
+-LT_REVISION=0
+-LT_AGE=1
++CURRENT_LT=4
++REVISION_LT=0
++AGE_LT=1
+ 
+-LT_VERSION_INFO="$LT_CURRENT:$LT_REVISION:$LT_AGE"
++LT_VERSION_INFO="$CURRENT_LT:$REVISION_LT:$AGE_LT"
+ AC_SUBST(LT_VERSION_INFO)
+ 
+ AM_MAINTAINER_MODE
