@@ -1,13 +1,12 @@
 Summary:	Cairo/GTK+ Canvas
 Summary(pl.UTF-8):	Płótno Cairo/GTK+
 Name:		goocanvas
-Version:	0.10
-Release:	3
+Version:	0.12
+Release:	1
 License:	LGPL v2
 Group:		X11/Libraries
-Source0:	http://dl.sourceforge.net/goocanvas/%{name}-%{version}.tar.gz
-# Source0-md5:	ed67903a547ca16e093255041ce46671
-Patch0:		%{name}-configure_fix.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/goocanvas/0.12/goocanvas-0.12.tar.bz2
+# Source0-md5:	5c66fc1d494d5612539464167e3f35bc
 URL:		http://sourceforge.net/projects/goocanvas/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.7
@@ -74,7 +73,6 @@ Dokumentacja API goocanvas.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 %{__libtoolize}
