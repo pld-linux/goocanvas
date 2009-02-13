@@ -1,16 +1,17 @@
 Summary:	Cairo/GTK+ Canvas
 Summary(pl.UTF-8):	Płótno Cairo/GTK+
 Name:		goocanvas
-Version:	0.12
+Version:	0.13
 Release:	1
 License:	LGPL v2
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/goocanvas/0.12/goocanvas-0.12.tar.bz2
-# Source0-md5:	5c66fc1d494d5612539464167e3f35bc
-URL:		http://sourceforge.net/projects/goocanvas/
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/goocanvas/0.13/%{name}-%{version}.tar.bz2
+# Source0-md5:	0f10b2dfb760e03b2b5cf945ad05dbd6
+URL:		http://live.gnome.org/GooCanvas
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	cairo-devel
+BuildRequires:	cairo-devel >= 1.4.0
+BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.10.0
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gtk-doc >= 1.8
@@ -37,7 +38,7 @@ Summary:	Header files for goocanvas
 Summary(pl.UTF-8):	Pliki nagłówkowe goocanvas
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	cairo-devel
+Requires:	cairo-devel >= 1.4.0
 Requires:	glib2-devel >= 1:2.10.0
 Requires:	gtk+2-devel >= 2:2.10.0
 
@@ -71,6 +72,17 @@ goocanvas API documentation.
 %description apidocs -l pl.UTF-8
 Dokumentacja API goocanvas.
 
+%package examples
+Summary:	Example programs using goocanvas library
+Summary(pl.UTF-8):	Przykładowe programy używające biblioteki goocanvas
+Group:		X11/Development/Libraries
+
+%description examples
+Example programs using goocanvas library.
+
+%description examples -l pl.UTF-8
+Przykładowe programy używające biblioteki goocanvas.
+
 %prep
 %setup -q
 
@@ -87,9 +99,16 @@ Dokumentacja API goocanvas.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# prepare and install examples
+%{__make} clean -C demo
+rm -rf demo/.deps
+rm -f demo/Makefile*
+cp demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %find_lang %{name}
 
@@ -119,3 +138,7 @@ rm -rf $RPM_BUILD_ROOT
 %files apidocs
 %defattr(644,root,root,755)
 %{_gtkdocdir}/goocanvas
+
+%files examples
+%defattr(644,root,root,755)
+%{_examplesdir}/%{name}-%{version}
