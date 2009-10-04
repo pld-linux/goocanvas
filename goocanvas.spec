@@ -106,9 +106,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 # prepare and install examples
 %{__make} clean -C demo
-rm -rf demo/.deps
-rm -f demo/Makefile*
-cp demo/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp demo/*.c demo/*.h demo/*.png $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %find_lang %{name}
 
