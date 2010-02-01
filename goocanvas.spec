@@ -11,6 +11,7 @@ URL:		http://live.gnome.org/GooCanvas
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	cairo-devel >= 1.4.0
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.10.0
 BuildRequires:	gtk+2-devel >= 2:2.10.0
