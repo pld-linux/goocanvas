@@ -1,12 +1,12 @@
 Summary:	Cairo/GTK+ Canvas
 Summary(pl.UTF-8):	Płótno Cairo/GTK+
 Name:		goocanvas
-Version:	0.14
-Release:	3
+Version:	1.0.0
+Release:	1
 License:	LGPL v2
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/goocanvas/0.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	c2bfb5d717e602842981112dff61bf2e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/goocanvas/1.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	4858a22239e45cf374195bae520021c2
 URL:		http://live.gnome.org/GooCanvas
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.7
@@ -14,12 +14,12 @@ BuildRequires:	cairo-devel >= 1.4.0
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.10.0
-BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	gtk-doc >= 1.8
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 Requires:	glib2 >= 1:2.10.0
-Requires:	gtk+2 >= 2:2.10.0
+Requires:	gtk+2 >= 2:2.12.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,7 +41,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	cairo-devel >= 1.4.0
 Requires:	glib2-devel >= 1:2.10.0
-Requires:	gtk+2-devel >= 2:2.10.0
+Requires:	gtk+2-devel >= 2:2.12.0
 
 %description devel
 Header files for goocanvas.
