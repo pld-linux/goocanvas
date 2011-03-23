@@ -2,7 +2,7 @@ Summary:	Cairo/GTK+ Canvas
 Summary(pl.UTF-8):	Płótno Cairo/GTK+
 Name:		goocanvas
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	LGPL v2
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/goocanvas/1.0/%{name}-%{version}.tar.bz2
@@ -110,6 +110,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %{__make} clean -C demo
 cp demo/*.c demo/*.h demo/*.png $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgoocanvas.la
+
 %find_lang %{name}
 
 %clean
@@ -127,7 +129,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgoocanvas.so
-%{_libdir}/libgoocanvas.la
 %{_includedir}/goocanvas-1.0
 %{_pkgconfigdir}/goocanvas.pc
 
